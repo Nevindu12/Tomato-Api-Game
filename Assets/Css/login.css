@@ -1,0 +1,107 @@
+body {
+    background: linear-gradient(180deg, #662549 25%, #AE445A 100%);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Login_Page Styles */
+
+.form-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%;
+    height: 70vh;
+    padding: 30px;
+    background-color: #1D1A39;
+    border-radius: 42px;
+    box-shadow: 0px 0px 20px #E8BCB9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-align {
+    margin-top: 25px;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.input-field {
+    width: 90%;
+    height: 5vh;
+    margin: 0px 20px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    color: #000000;
+}
+
+.reg_txt {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loginbtn {
+    background: transparent;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 1% 10%;
+    border: 2px solid #2bff00;
+    border-radius: 37px;
+    cursor: pointer;
+    transition: all 600ms ease;
+}
+
+.loginbtn:hover {
+    background-color: #2bff00;
+    color: #000000;
+    box-shadow: 0 0 30px #2bff00;
+}
+
+.regbtn {
+    background: transparent;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 1% 20%;
+    border: 2px solid #ff0000;
+    border-radius: 37px;
+    cursor: pointer;
+    transition: all 600ms ease;
+}
+
+.regbtn:hover {
+    background-color: #FF204E;
+    color: #000000;
+    box-shadow: 0 0 40px #FF204E;
+}
+
+.text-center {
+    padding: 10px 15px;
+}
+
+.custom-icon {
+    font-size: 3rem;
+}
