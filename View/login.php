@@ -14,8 +14,8 @@
 <body>
     <div class="container">
         <div class="form-wrapper">
-            <h1 class="text-center">WELCOME</h1>
-            <h3 class="text-center">MATHZY QUIZ</h3>
+            <h1 class="welcome-text">WELCOME</h1>
+            <h3 class="text">MATHZY QUIZ</h3>
             <form class="form-align" method="post">
                 <div class="form-group">
                     <label for="email"><i class="bi bi-envelope-fill"></i></label>

@@ -17,30 +17,30 @@
 <body>
     <div class="container">
         <div class="regform-wrapper">
-            <h1 class="text-center">Create Your Profile</h1>
-            <h3 class="text-center">MATHZY QUIZ</h3>
+            <h1 class="heading">Create Your Profile</h1>
+            <h3 class="text">MATHZY QUIZ</h3>
             <form class="regform-align" action="" method="post">
                 <div class="regform-group">
-                    <label for="fullName">Full Name :</i></label>
+                    <!-- <label for="fullName">Full Name :</i></label> -->
                     <input type="text" class="input-field" id="fullName" name="fullName" placeholder="Enter Full Name"
                         required>
                 </div>
                 <div class="regform-group">
-                    <label for="email">Email Address :</i></label>
+                    <!-- <label for="email">Email Address :</i></label> -->
                     <input type="email" class="input-field" id="email" name="email" placeholder="Enter email" required>
                 </div>
                 <div class="regform-group">
-                    <label for="age">Age :</i></label>
+                    <!-- <label for="age">Age :</i></label> -->
                     <input type="number" class="input-field" id="age" name="age" placeholder="Enter your age" min="0"
                         required>
                 </div>
                 <div class="regform-group">
-                    <label for="password">Password :</i></label>
+                    <!-- <label for="password">Password :</i></label> -->
                     <input type="password" class="input-field" id="password" name="password"
                         placeholder="Enter password" required>
                 </div>
                 <div class="regform-group">
-                    <label for="confirmPassword">Confirm Password :</i></label>
+                    <!-- <label for="confirmPassword">Confirm Password :</i></label> -->
                     <input type="password" class="input-field" id="confirmPassword" name="confirmPassword"
                         placeholder="Confirm your password" required>
                 </div>
@@ -48,6 +48,7 @@
                     <button class="cancelbtn" type="reset" id="cancelbtn">Reset</button>
                     <button class="regformBtn" type="submit" id="regbtn" name="register">Register</button> <br><br>
                     Already Have An Acconut ? <a href="login.php" id="loginlink">Click Here</a>
+
 
                 </div>
             </form>
