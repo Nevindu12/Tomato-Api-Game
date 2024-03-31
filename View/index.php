@@ -1,3 +1,11 @@
+<?php
+include '../Controller/config.php';
+if(!$_SESSION['loggedIn']){
+    redirect("login.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,23 +24,27 @@
 </head>
 
 <body>
+
     <nav class="navbar">
         <h1 class="logo">MATHZY QUIZ</h1>
         <div class="links">
-            <a href="profile.php">Hi,</a>
+            <?php if($_SESSION['loggedIn']){ ?>
+                <a href="profile.php">Hi, <?=$_SESSION['user_username'];?></a>
+            <?php } ?>
             <a href="scores.php"><i class="bi bi-trophy-fill"></i></a>
             <a href="../Controller/logout.php"><i class="bi bi-power custom-icon"></i></a>
         </div>
     </nav>
     <div class="container">
         <div class="content">
-            <h1 class="indexTitle">Let's Play</h1>
-            <img id="quiz-image" src="../Assets/Images/main_img.png" alt="">
-            <a href="howtoplay.php"><button class="howtoplayBtn" id="startbtn">How To Play</button></a>
-            <a href="howtoplay.php"><button class="startBtn" id="startbtn">Start Playing</button></a>
+            <h1 class="mainTitle">Let's Play</h1>
+            <img id="image" src="../Assets/Images/main_img.png" alt="">
+            <?php if($_SESSION['loggedIn']){ ?>
+                <a href="howtoplay.php"><button class="howtoplayBtn" id="startbtn">How To Play</button></a>
+            <?php } ?>    
+            <a href="sample.html"><button class="startBtn" id="startbtn">Start Playing</button></a>
         </div>
     </div>
-
 
 </body>
 

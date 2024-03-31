@@ -5,7 +5,7 @@ body {
     background-attachment: fixed;
 }
 
-.indexTitle {
+.mainTitle {
     color: #FFF;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 72px;
@@ -57,16 +57,16 @@ body {
     box-shadow: 0 0 20px #ff0000;
 }
 
-#quiz-image {
+#image {
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
-    animation-name: quiz-image;
+    animation-name: image;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
 }
 
-@keyframes quiz-image {
+@keyframes image {
     50% {
         transform: scale(1.1);
     }
@@ -104,18 +104,14 @@ body {
 }
 
 .links a {
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.links a:hover {
-    color: #7FC7D9;
-    transform: scale(1.2);
-    text-shadow: 0 0 60px rgb(255, 255, 255);
-}
-
-.links>a {
     color: white;
     margin-right: 2rem;
     font-size: 20px;
     text-decoration: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.links a:hover {
+    color: #E8BCB9;
+    transform: scale(1.2);
 }

@@ -1,3 +1,8 @@
+<?php
+include '../Controller/config.php';
+include '../Controller/registerHandler.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +32,7 @@
                 </div>
                 <div class="regform-group">
                     <!-- <label for="email">Email Address :</i></label> -->
-                    <input type="email" class="input-field" id="email" name="email" placeholder="Enter email" required>
+                    <input type="text" class="input-field" id="username" name="username" placeholder="Enter User Name" required>
                 </div>
                 <div class="regform-group">
                     <!-- <label for="age">Age :</i></label> -->

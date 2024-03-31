@@ -1,3 +1,8 @@
+<?php
+include '../Controller/config.php';
+include '../Controller/loginHandler.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,8 +23,8 @@
             <h3 class="text">MATHZY QUIZ</h3>
             <form class="form-align" method="post">
                 <div class="form-group">
-                    <label for="email"><i class="bi bi-envelope-fill"></i></label>
-                    <input type="email" class="input-field" id="email" name="email" placeholder="Enter email" required>
+                    <label for="username"><i class="bi bi-person-fill"></i></label>
+                    <input type="text" class="input-field" id="username" name="username" placeholder="Enter User Name" required>
                 </div>
                 <div class="form-group">
                     <label for="password"><i class="bi bi-lock-fill"></i></i></label>
@@ -32,7 +37,7 @@
             </form>
             <div class="text-center">
                 <h6 class="reg_txt">Don't Have a Profile? </h6>
-                <a href="#" id="reglink"><button class="regbtn" id="regbtn">Register</button></a>
+                <a href="./register.php" id="reglink"><button class="regbtn" id="regbtn">Register</button></a>
             </div>
         </div>
     </div>
