@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=League+Spartan:wght@300;400;500&family=Montserrat:wght@500;700&family=Rubik+Scribble&display=swap');
+body {
+    background: linear-gradient(290deg, #1D1A39 30%, #451952 90%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.logo {
+    font-family: "Honk", system-ui;
+    font-weight: 700;
+    font-size: 4rem;
+    width: 38%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5vw;
+}
+
+.uTitle {
+    color: #fff;
+    padding-top: 0px;
+    font-size: 3vw;
+}
+
+.links {
+    width: auto;
+    text-align: right;
+    font-size: 25px;
+    position: relative;
+    margin-right: 6rem;
+}
+
+.links a {
+    margin-right: 10px;
+    color: black;
+    transition: 0.5s;
+}
+
+.links a:hover {
+    color: rgb(255, 58, 58);
+}
+
+.single-Data {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.single-Data span {
+    padding: 5px 10px;
+    background-color: rgb(255, 92, 92);
+    color: #fff;
+    width: fit-content;
+    margin-left: 40px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#timer {
+    background-color: transparent;
+}
+
+.timeTag.active {
+    animation: 1s btn ease-in-out infinite;
+}
+
+@keyframes btn {
+    0% {
+        background-color: rgb(255, 92, 92);
+    }
+
+    50% {
+        background-color: rgb(26, 26, 26);
+    }
+
+    100% {
+        background-color: rgb(255, 92, 92);
+    }
+}
+
+#ans {
+    color: #fff;
+    font-size: 30px;
+}
+
+.ans-align p {
+    font-size: 30px;
+}
+
+.txtAns button {
+    border: 0px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    color: #000000;
+    transition: .5s;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.txtAns button:hover {
+    background-color:rgb(255, 43, 43) ;
+}
+
+#userName {
+    color: #ffbb00;
+}
+
+.imgApi {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 5px solid rgb(255, 43, 43);
+    border-radius: 15px;
+}
+
+.lives span {
+    padding: 5px 10px;
+    height: 30px;
+    width: 100px;
+}
+
+.lives {
+    position: absolute;
+    right: 0px;
+    top: -5px;
+}
+
+.lives img {
+    width: 30px;
+}
+
+.overOut {
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.438);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.over {
+    background-color: rgb(255, 92, 92);
+    padding: 50px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+.over p {
+    font-size: 40px;
+}
+
+.over button {
+    font: 30px;
+    padding: 5px 10px;
+    border: 0px;
+    width: 100px;
+    background-color: #ffc72b;
+    border-radius: 25px;
+    color: aliceblue;
+    transition: .5s;
+}
+
+.over button:hover {
+    background-color: rgb(37, 37, 37);
+}
+
+.hiddenBtn {
+    display: none;
+}

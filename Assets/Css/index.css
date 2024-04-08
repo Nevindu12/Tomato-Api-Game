@@ -73,9 +73,11 @@ body {
 }
 
 .container {
+    position: absolute;
     height: 80vh;
     width: 100%;
     margin-top: 3rem;
+    margin-left: 5rem;
     align-items: center;
     justify-content: center;
 }
@@ -89,7 +91,7 @@ body {
 .navbar {
     height: 10vh;
     margin-top: 10px;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
     font-weight: bold;
 }
 
@@ -99,7 +101,7 @@ body {
 }
 
 .links {
-    margin-right: 4rem;
+    margin-right: 5rem;
     font-size: 30px;
 }
 
@@ -114,4 +116,60 @@ body {
 .links a:hover {
     color: #E8BCB9;
     transform: scale(1.2);
+}
+
+.levelOut {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.616);
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.level {
+    width: fit-content;
+    height: fit-content;
+    padding: 50px;
+    z-index: 1000;
+    border-radius: 15px;
+    background-color: #e4bdf0;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #ff3e3e;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+.level p {
+    font-size: 30px;
+}
+
+.level button {
+    padding: 5px 25px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.level button:hover {
+    background-color: #451952;
+    border: 2px solid #fff;
+    color: white;
 }
