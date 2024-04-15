@@ -24,12 +24,8 @@ if (isset($_GET['new'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../Photos/icon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -104,12 +100,12 @@ if (isset($_GET['new'])) {
                 audioElement.play();
                 document.getElementById("clock").pause();
                 $('.timeTag').removeClass('active');
-                $('.overOut').css('display', 'flex');
+                $('.gameEnd').css('display', 'flex');
             }
         }
 
 
-        //Time Countdown
+        //Timer Countdown
         function countDown() {
             clearInterval(timerInterval);
             timeLeft = localStorage.getItem('timeLeft');
@@ -144,7 +140,7 @@ if (isset($_GET['new'])) {
 
 
 
-        //High Score
+        //Calculate Score
         function highScore(score) {
             var dataSet = {
                 score: score,
@@ -154,33 +150,33 @@ if (isset($_GET['new'])) {
             $.ajax({
 
                 type: 'POST',
-                url: '../server/highScore.php',
+                url: '../Controller/scoreHandler.php',
                 data: dataSet,
-                success: function (response) {
+                success: function(response) {
 
                     if (response === 'Success') {
-                        //console.log(response);
+                        // console.log(response);
                     }
                     console.log(response);
                 },
-                error: function () {
+                error: function() {
                     alert('Error occurred. Please try again.');
                 }
 
             });
         }
 
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             updateUI();
             fetchImage();
             lives();
         });
 
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             countDown();
 
-            $(".ansBtn").click(function (e) {
+            $(".ansBtn").click(function(e) {
                 var userAns = $(this).text();
                 if (userAns == solution) {
                     correctAns($(this))
@@ -194,8 +190,7 @@ if (isset($_GET['new'])) {
                     countDown();
                     $('.timeTag').removeClass('active');
                     document.getElementById("clock").pause();
-                }
-                else {
+                } else {
                     wrongAns($(this))
                     var audioElement = document.getElementById("wrong");
                     audioElement.currentTime = 0;
@@ -207,20 +202,19 @@ if (isset($_GET['new'])) {
                 }
             })
 
-            $('#again').click(function (e) {
-                $('.overOut').css('display', 'none');
+            $('#retry').click(function(e) {
+                $('.gameEnd').css('display', 'none');
             })
 
             //in game audio
-            $('#ingame').click(function (e) {
+            $('#ingame').click(function(e) {
                 var audio = document.getElementById("myAudio");
 
                 if (audio.paused) {
                     audio.play();
                     $(this).html("<i class='bi bi-volume-mute'></i>");
                     console.log('play')
-                }
-                else {
+                } else {
                     audio.pause();
                     $(this).html("<i class='bi bi-music-note'></i>");
                     console.log('pause')
@@ -237,44 +231,56 @@ if (isset($_GET['new'])) {
         <nav class="navbar">
             <h1 class="logo">MATHZY QUIZ</h1>
             <div class="links">
-                <!-- <a href="#" id="ingame"><i class="bi bi-volume-mute"></i></a> -->
+                <a href="#" id="ingame"><i class="bi bi-volume-mute"></i></a>
                 <a href="index.php"><i class="bi bi-house-fill custom-icon"></i></a>
-                <a href="scores.php"><i class="bi bi-trophy-fill custom-icon"></i></a>
-                <!-- <a href="profile.php"><i class="bi bi-person-fill custom-icon"></i></i></a> -->
                 <a href="../Controller/logout.php"><i class="bi bi-power custom-icon"></i></a>
             </div>
         </nav>
 
         <div class="container">
-            <div class="uTitle">Hi <span id='userName'>
-                    <?php echo "" . $_SESSION["user_username"] . ""; ?>
+            <div class="uTitle">Hi <span id='userName'> <?php echo "" . $_SESSION["user_username"] . ""; ?>
                 </span>, LET'S PLAY! </div>
 
-            <div class="single-Data">
+            <div class="game-Data">
                 <span>Level <span id="level-no">1</span></span>
                 <span>Question<span id="question-number">1</span></span>
                 <span>Score<span id="score">0</span></span>
                 <span class="timeTag" id='timeTag'>Time(S) <span id="timer">45</span></span>
-                <div class="lives">
-                </div>
+                <div class="lives"></div>
             </div>
             <div class="imgApi">
                 <img src="" alt="Question Image" id="imgApi" class="color-image">
             </div>
 
-            <div class="ans-align">
-                <p class="txtAns" id='ans'>Choose The Answer : <button class='ansBtn'>0</button> <button
-                        class='ansBtn'>1</button> <button class='ansBtn'>2</button> <button class='ansBtn'>3</button>
+            <div class="answers">
+                <p class="txtAns" id='ans'>Choose Your Answer : <button class='ansBtn'>0</button>
+                    <button class='ansBtn'>1</button>
+                    <button class='ansBtn'>2</button>
+                    <button class='ansBtn'>3</button>
                     <button class='ansBtn'>4</button>
-                    <button class='ansBtn'>5</button> <button class='ansBtn'>6</button> <button
-                        class='ansBtn'>7</button> <button class='ansBtn'>8</button> <button class='ansBtn'>9</button>
+                    <button class='ansBtn'>5</button>
+                    <button class='ansBtn'>6</button>
+                    <button class='ansBtn'>7</button>
+                    <button class='ansBtn'>8</button>
+                    <button class='ansBtn'>9</button>
                 </p>
             </div>
 
-            <div class="overOut">
+            <!-- <div id="note"></div> -->
+
+            <audio id="correct" src="../Assets/Audio/correct.mp3" preload="auto"></audio>
+            <audio id="wrong" src="../Assets/Audio/wrong.mp3" preload="auto"></audio>
+            <audio id="over" src="../Assets/Audio/over.mp3" preload="auto"></audio>
+            <audio id="clock" src="../Assets/Audio/clock.mp3" preload="auto"></audio>
+            <audio autoplay loop id="myAudio">
+                <source src="../Assets/Audio/ingame.mp3" type="audio/mpeg">
+            </audio>
+
+
+            <div class="gameEnd">
                 <div class="over">
                     <p>GAME OVER</p>
-                    <a href="" id="again"><button>Play Again</button></a>
+                    <a href="" id="retry"><button>Retry</button></a>
                     <a href="./index.php"><button> Home</button></a>
                 </div>
             </div>

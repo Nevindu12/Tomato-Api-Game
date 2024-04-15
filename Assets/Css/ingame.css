@@ -3,6 +3,10 @@ body {
     background: linear-gradient(290deg, #1D1A39 30%, #451952 90%);
 }
 
+.maincontainer {
+    height: 100vh;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -27,6 +31,7 @@ h1 {
 .uTitle {
     color: #fff;
     padding-top: 0px;
+    font-family: "Dancing Script", cursive;
     font-size: 3vw;
 }
 
@@ -40,15 +45,15 @@ h1 {
 
 .links a {
     margin-right: 10px;
-    color: black;
+    color: #fff;
     transition: 0.5s;
 }
 
 .links a:hover {
-    color: rgb(255, 58, 58);
+    color: #eea0a0;
 }
 
-.single-Data {
+.game-Data {
     display: flex;
     width: 100%;
     margin-bottom: 20px;
@@ -56,9 +61,9 @@ h1 {
     position: relative;
 }
 
-.single-Data span {
+.game-Data span {
     padding: 5px 10px;
-    background-color: rgb(255, 92, 92);
+    background-color: #eea0a0;
     color: #fff;
     width: fit-content;
     margin-left: 40px;
@@ -93,10 +98,8 @@ h1 {
 
 #ans {
     color: #fff;
-    font-size: 30px;
-}
-
-.ans-align p {
+    margin-top: 2rem;
+    font-family: "Dancing Script", cursive;
     font-size: 30px;
 }
 
@@ -121,11 +124,13 @@ h1 {
 }
 
 .imgApi {
-    width: 100%;
+    width: fit-content;
     display: flex;
-    justify-content: center;
+    /* justify-content: center;
+    align-items: center; */
+    margin-left: 23rem;
     border: 5px solid rgb(255, 43, 43);
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .lives span {
@@ -144,7 +149,7 @@ h1 {
     width: 30px;
 }
 
-.overOut {
+.gameEnd {
     width: 100%;
     height: 100vh;
     z-index: 5;
@@ -158,7 +163,7 @@ h1 {
 }
 
 .over {
-    background-color: rgb(255, 92, 92);
+    background-color: rgb(250, 0, 0);
     padding: 50px;
     border-radius: 15px;
     color: white;
@@ -166,24 +171,22 @@ h1 {
 }
 
 .over p {
+    font-family: "Dancing Script", cursive;
     font-size: 40px;
 }
 
 .over button {
-    font: 30px;
-    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 10px;
     border: 0px;
     width: 100px;
-    background-color: #ffc72b;
+    background-color: #eea0a0;
     border-radius: 25px;
-    color: aliceblue;
+    color: #000000;
     transition: .5s;
 }
 
 .over button:hover {
-    background-color: rgb(37, 37, 37);
-}
-
-.hiddenBtn {
-    display: none;
+    background-color: #451952;
 }

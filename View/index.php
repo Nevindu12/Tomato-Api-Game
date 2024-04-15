@@ -27,9 +27,9 @@ if (!$_SESSION['loggedIn']) {
         <h1 class="logo">MATHZY QUIZ</h1>
         <div class="links">
             <?php if ($_SESSION['loggedIn']) { ?>
-                <a href="profile.php">Hi, <?= $_SESSION['user_username']; ?></a>
+                <a href="#">Hi, <?= $_SESSION['user_username']; ?></a>
             <?php } ?>
-            <a href="scores.php"><i class="bi bi-trophy-fill"></i></a>
+            <a href="./score.php"><i class="bi bi-trophy-fill"></i></a>
             <a href="../Controller/logout.php"><i class="bi bi-power custom-icon"></i></a>
         </div>
     </nav>
@@ -65,17 +65,17 @@ if (!$_SESSION['loggedIn']) {
             })
             $('#easy').click(function() {
                 localStorage.setItem('livesLeft', '6');
-                localStorage.setItem('timeLeft', '120');
+                localStorage.setItem('timeLeft', '90');
                 window.location.href = "./ingame.php";
             })
             $('#medium').click(function() {
                 localStorage.setItem('livesLeft', '4');
-                localStorage.setItem('timeLeft', '80');
+                localStorage.setItem('timeLeft', '60');
                 window.location.href = "./ingame.php";
             })
             $('#hard').click(function() {
                 localStorage.setItem('livesLeft', '3');
-                localStorage.setItem('timeLeft', '15');
+                localStorage.setItem('timeLeft', '30');
                 window.location.href = "./ingame.php";
             })
         })
